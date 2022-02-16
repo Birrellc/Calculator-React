@@ -1,14 +1,11 @@
 import React from 'react';
 
 const App = () => {
-  const createNumbers = () => {
-    const numbers = [];
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-    for (let i = 1; i < 10; i++) {
-      numbers.push(<button key={i}>{i}</button>);
-    }
-    return numbers;
-  };
+  const createNumbers = numbers.map((num) => {
+    return <button key={num}>{num}</button>;
+  });
 
   return (
     <div className='App'>
@@ -23,10 +20,10 @@ const App = () => {
           <button>C</button>
         </div>
 
-        <div className='keys'>
-          {createNumbers()}
-          <button>0</button>
+        <div className='digits'>
+          {createNumbers}
           <button>.</button>
+          <button>0</button>
           <button>=</button>
         </div>
       </div>
