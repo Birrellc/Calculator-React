@@ -1,13 +1,76 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --background: #e8d1c5;
+  --calc-bg: #fff1e6;
+  --operand-bg: #e8d1c5;
+  --button-bg: #eeddd3;
+  --display-bg: #edede8;
+  --black: #000;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  font-size: 10px;
+}
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.calculator {
+  padding: 2rem;
+  max-width: 25rem;
+  width: 100%;
+  background-color: var(--calc-bg);
+  border-radius: 2rem;
+  box-shadow: 0.2rem 0.5rem 5rem rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.display {
+  padding: 1.5rem;
+  background-color: var(--display-bg);
+  font-size: 2rem;
+  text-align: right;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+button {
+  padding: 1.5rem;
+  appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2rem;
+  outline: none;
+  color: var(--black);
+  cursor: pointer;
+}
+
+.operands {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.operands button {
+  background-color: var(--operand-bg);
+}
+
+.digits {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.digits button {
+  background-color: var(--button-bg);
+  flex: 1 1 33.33%;
+  max-width: 33.33%;
 }
